@@ -3,8 +3,224 @@ vlan:
 -
     vlan_id: 400
     ipv4: 10.0.140.1/24
-    vlan_name: ansible_test
+    vlan_name: ansible_test1
     vni: 10400
+    description: Created with Ansible
+-
+    vlan_id: 401
+    ipv4: 10.0.141.1/24
+    vlan_name: ansible_test2
+    vni: 10401
+    description: Created with Ansible
+-
+    vlan_id: 402
+    ipv4: 10.0.142.1/24
+    vlan_name: ansible_test3
+    vni: 10402
+    description: Created with Ansible
+-
+    vlan_id: 403
+    ipv4: 10.0.143.1/24
+    vlan_name: ansible_test4
+    vni: 10403
+    description: Created with Ansible
+-
+    vlan_id: 404
+    ipv4: 10.0.144.1/24
+    vlan_name: ansible_test5
+    vni: 10404
+    description: Created with Ansible
+-
+    vlan_id: 405
+    ipv4: 10.0.145.1/24
+    vlan_name: ansible_test6
+    vni: 10405
+    description: Created with Ansible
+-
+    vlan_id: 406
+    ipv4: 10.0.146.1/24
+    vlan_name: ansible_test7
+    vni: 10406
+    description: Created with Ansible
+-
+    vlan_id: 407
+    ipv4: 10.0.147.1/24
+    vlan_name: ansible_test8
+    vni: 10407
+    description: Created with Ansible
+-
+    vlan_id: 408
+    ipv4: 10.0.148.1/24
+    vlan_name: ansible_test9
+    vni: 10408
+    description: Created with Ansible
+-
+    vlan_id: 409
+    ipv4: 10.0.149.1/24
+    vlan_name: ansible_test10
+    vni: 10409
+    description: Created with Ansible
+-
+    vlan_id: 410
+    ipv4: 10.0.150.1/24
+    vlan_name: ansible_test11
+    vni: 10410
+    description: Created with Ansible
+-
+    vlan_id: 411
+    ipv4: 10.0.151.1/24
+    vlan_name: ansible_test12
+    vni: 10411
+    description: Created with Ansible
+-
+    vlan_id: 412
+    ipv4: 10.0.152.1/24
+    vlan_name: ansible_test13
+    vni: 10412
+    description: Created with Ansible
+-
+    vlan_id: 413
+    ipv4: 10.0.153.1/24
+    vlan_name: ansible_test14
+    vni: 10413
+    description: Created with Ansible
+-
+    vlan_id: 414
+    ipv4: 10.0.154.1/24
+    vlan_name: ansible_test15
+    vni: 10414
+    description: Created with Ansible
+-
+    vlan_id: 415
+    ipv4: 10.0.155.1/24
+    vlan_name: ansible_test16
+    vni: 10415
+    description: Created with Ansible
+-
+    vlan_id: 416
+    ipv4: 10.0.156.1/24
+    vlan_name: ansible_test17
+    vni: 10416
+    description: Created with Ansible
+-
+    vlan_id: 417
+    ipv4: 10.0.157.1/24
+    vlan_name: ansible_test18
+    vni: 10417
+    description: Created with Ansible
+-
+    vlan_id: 418
+    ipv4: 10.0.158.1/24
+    vlan_name: ansible_test19
+    vni: 10418
+    description: Created with Ansible
+-
+    vlan_id: 419
+    ipv4: 10.0.159.1/24
+    vlan_name: ansible_test20
+    vni: 10419
+    description: Created with Ansible
+-
+    vlan_id: 420
+    ipv4: 10.0.160.1/24
+    vlan_name: ansible_test21
+    vni: 10420
+    description: Created with Ansible
+-
+    vlan_id: 421
+    ipv4: 10.0.161.1/24
+    vlan_name: ansible_test22
+    vni: 10421
+    description: Created with Ansible
+-
+    vlan_id: 422
+    ipv4: 10.0.162.1/24
+    vlan_name: ansible_test23
+    vni: 10422
+    description: Created with Ansible
+-
+    vlan_id: 423
+    ipv4: 10.0.163.1/24
+    vlan_name: ansible_test24
+    vni: 10423
+    description: Created with Ansible
+-
+    vlan_id: 424
+    ipv4: 10.0.164.1/24
+    vlan_name: ansible_test25
+    vni: 10424
+    description: Created with Ansible
+-
+    vlan_id: 425
+    ipv4: 10.0.165.1/24
+    vlan_name: ansible_test26
+    vni: 10425
+    description: Created with Ansible
+-
+    vlan_id: 426
+    ipv4: 10.0.166.1/24
+    vlan_name: ansible_test27
+    vni: 10426
+    description: Created with Ansible
+-
+    vlan_id: 427
+    ipv4: 10.0.167.1/24
+    vlan_name: ansible_test28
+    vni: 10427
+    description: Created with Ansible
+-
+    vlan_id: 428
+    ipv4: 10.0.168.1/24
+    vlan_name: ansible_test29
+    vni: 10428
+    description: Created with Ansible
+-
+    vlan_id: 429
+    ipv4: 10.0.169.1/24
+    vlan_name: ansible_test30
+    vni: 10429
+    description: Created with Ansible
+-
+    vlan_id: 430
+    ipv4: 10.0.170.1/24
+    vlan_name: ansible_test31
+    vni: 10430
+    description: Created with Ansible
+-
+    vlan_id: 431
+    ipv4: 10.0.171.1/24
+    vlan_name: ansible_test32
+    vni: 10431
+    description: Created with Ansible
+-
+    vlan_id: 432
+    ipv4: 10.0.172.1/24
+    vlan_name: ansible_test33
+    vni: 10432
+    description: Created with Ansible
+-
+    vlan_id: 433
+    ipv4: 10.0.173.1/24
+    vlan_name: ansible_test34
+    vni: 10433
+    description: Created with Ansible
+-
+    vlan_id: 434
+    ipv4: 10.0.174.1/24
+    vlan_name: ansible_test35
+    vni: 10434
+    description: Created with Ansible
+-
+    vlan_id: 435
+    ipv4: 10.0.175.1/24
+    vlan_name: ansible_test36
+    vni: 10435
+    description: Created with Ansible
+-
+    vlan_id: 436
+    ipv4: 10.0.176.1/24
+    vlan_name: ansible_test37
+    vni: 10436
     description: Created with Ansible
 
 switch_iface:
@@ -12,4 +228,3 @@ switch_iface:
       iface: Ethernet1/3
       port_mode: access
       vlan_id: 400
-
