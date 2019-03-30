@@ -1,0 +1,76 @@
+---
+- name: Deploy and Map VLAN to VXLAN
+  hosts: vxlan_switches
+  connection: local
+  gather_facts: False
+  vars_files:
+    - vars/vxlan_vars.yaml
+
+  tasks:
+    - name: Task 01 - Verify and deploy VLANs mapped to VNIs
+      nxos_vlan:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        vlan_id: 400
+        admin_state: up
+        name: ansible_test
+        mapped_vni: 10400
+
+      nxos_interface:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        name: Vlan400
+        description: 'Configured by Ansible'
+        fabric_forwarding_anycast_gateway: yes
+
+      nxos_vrf_interface:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        vrf: TOUCHWORKS
+        interface: Vlan400
+
+      nxos_l3_interface:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        name: Vlan400
+        ipv4: 10.0.140.1/24
+
+      when: inventory_hostname == "192.168.122.139"
+      nxos_switchport:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        interface: eth1/3
+        mode: access
+        access_vlan: 400        
+        
+    - name: Task 02 - Verify NVE is configured with VNIs
+      nxos_vxlan_vtep_vni:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        interface: nve1
+        vni: 10400
+        ingress_replication: bgp
+        suppress_arp: yes
+
+    - name: Task 03 - Verify and deploy VNI configuration to EVPN
+      nxos_evpn_vni:
+        host: "{{ inventory_hostname }}"
+        username: "{{ username }}"
+        password: "{{ password }}"
+        state: present
+        vni: 10400
+        route_distinguisher: auto
+        route_target_import: auto
+        route_target_export: auto

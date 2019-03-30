@@ -1,0 +1,10 @@
+[vxlan_switches:vars]
+username=admin
+password=admin
+ansible_python_interpreter="/usr/bin/env python"
+
+[vxlan_switches]
+192.168.122.138
+192.168.122.139
+192.168.122.179
+192.168.122.134

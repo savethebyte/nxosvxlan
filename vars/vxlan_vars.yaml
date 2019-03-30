@@ -1,0 +1,15 @@
+---
+vlan:
+-
+    vlan_id: 400
+    ipv4: 10.0.140.1/24
+    vlan_name: ansible_test
+    vni: 10400
+    description: Created with Ansible
+
+switch_iface:
+-
+      iface: Ethernet1/3
+      port_mode: access
+      vlan_id: 400
+
