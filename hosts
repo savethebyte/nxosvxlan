@@ -1,6 +1,8 @@
-[vxlan_switches:vars]
-username=admin
-password=admin
+[network:vars]
+ansible_connection=network_cli
+ansible_network_os=nxos
+ansible_user=admin
+ansible_password=admin
 ansible_python_interpreter="/usr/bin/env python"
 
 [vxlan_switches]
@@ -8,3 +10,6 @@ ansible_python_interpreter="/usr/bin/env python"
 192.168.122.139
 192.168.122.179
 192.168.122.134
+
+[network:children]
+vxlan_switches

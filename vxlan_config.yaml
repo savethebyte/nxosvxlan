@@ -1,7 +1,6 @@
 ---
 - name: Deploy and Map VLAN to VXLAN
-  hosts: vxlan_switches
-  connection: local
+  hosts: network
   gather_facts: False
   vars_files:
     - vars/vxlan_vars.yaml
@@ -9,9 +8,6 @@
   tasks:
     - name: Task 01 - Verify and deploy VLANs mapped to VNIs
       nxos_vlan:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
         vlan_id: "{{ item.vlan_id }}"
         admin_state: up
@@ -21,9 +17,6 @@
 
     - name: Task 02 - Verify NVE is configured with VNIs
       nxos_vxlan_vtep_vni:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
         interface: nve1
         vni: "{{ item.vni }}"
@@ -33,9 +26,6 @@
 
     - name: Task 03 - Verify and deploy VNI configuration to EVPN
       nxos_evpn_vni:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
         vni: "{{ item.vni }}"
         route_distinguisher: auto
@@ -45,9 +35,6 @@
 
     - name: Task 04 - Create SVI with anycast gateway
       nxos_interface:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
         name: "Vlan{{ item.vlan_id }}"
         description: "{{ item.description }}"
@@ -56,19 +43,13 @@
 
     - name: Task 05 - Assign SVI to vrf
       nxos_vrf_interface:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
-        vrf: TOUCHWORKS
+        vrf: "{{ item.vrf }}"
         interface: "Vlan{{ item.vlan_id }}"
       with_items: "{{ vlan }}"
 
     - name: Task 06 - Assign IP to SVI
       nxos_l3_interface:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
         name: "Vlan{{ item.vlan_id }}"
         ipv4: "{{ item.ipv4 }}"
@@ -79,12 +60,8 @@
       when: (inventory_hostname == "192.168.122.139") or
             (inventory_hostname == "192.168.122.138")
       nxos_switchport:
-        host: "{{ inventory_hostname }}"
-        username: "{{ username }}"
-        password: "{{ password }}"
         state: present
         interface: "{{ item.iface }}"
         mode: "{{ item.port_mode }}"
         access_vlan: "{{ item.vlan_id }}"
       with_items: "{{ switch_iface }}"
-
